@@ -17,13 +17,15 @@ class Pub
     return @foods.count
   end
 
-
   def add_food(food)
+  # @foods[:food]
     @foods.push(food)
   end
 
 
   def add_drink(drink)
+    # hash[:item2] = 2
+    # @drinks[:drink]
     @drinks.push(drink)
   end
 
@@ -48,11 +50,10 @@ class Pub
   #remove the drink the Pub
   #remove money from wallet
   #add money to till
-  drink_price = drink.price
   buy_drink(drink)
-  customer.remove_money_from_wallet(drink_price)
-    @till += drink_price
-    customer.add_drunkness_to_customer(drink.alcohol_level)
+  customer.remove_money_from_wallet(drink.price)
+  @till += drink.price
+  customer.add_drunkness_to_customer(drink.alcohol_level)
   end
 
 
